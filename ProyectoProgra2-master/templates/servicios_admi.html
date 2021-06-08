@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css" />
+    <title>QUALITY TRANSPORT| Tabla de servicios</title>
+
+    <script> 
+        let serviciosG = JSON.parse(sessionStorage.getItem("servicios")); 
+        window.onload = function getServicios(){
+            
+            if (serviciosG.length=="0"){
+                parent = document.getElementById('myTable');
+                let tr = document.createElement('tr');
+                let th = document.createElement('th');
+                td.innerHTML= 'No hay servicios disponibles';
+                tr.appendChild(th);
+                parent.appendChild(tr);
+            }
+            else{
+                parent = document.getElementById('myTable');
+                let tr = document.createElement('tr');
+                let title = document.createElement('th');
+                let desc = document.createElement('th');
+                let actions = document.createElement('th');
+                title.innerHTML = 'Título';
+                desc.innerHTML = 'Descripción';
+                actions.innerHTML = 'Acciones';
+
+                tr.appendChild(title);
+                tr.appendChild(desc);
+                tr.appendChild(actions);
+                parent.appendChild(tr);
+
+                for(let i = 0; i<serviciosG.length; i++){
+                    let titleInput = document.createElement("input");
+                    let descInput = document.createElement("textarea");
+                    let button = document.createElement("button");
+                    let actions = document.createElement('td');
+                    parent = document.getElementById('myTable');
+                    let tr = document.createElement('tr');
+                    let title = document.createElement('td');
+                    titleInput.value = serviciosG[i][0];
+                    let desc = document.createElement('td');
+                    descInput.value = serviciosG[i][1];
+
+                    button.innerHTML = "Eliminar servicio";
+                    button.setAttribute('onclick',  "eliminar(" + i + ");");
+
+                    titleInput.style.width = "100%" ;
+                    descInput.style.width = "100%" ;
+                    titleInput.id ="input"+i;
+                    descInput.id ="textarea"+i;
+
+                    desc.appendChild(descInput);
+                    tr.appendChild(title);
+                    tr.appendChild(desc);
+                    tr.appendChild(actions);
+                    actions.appendChild(button);
+                    title.appendChild(titleInput);
+                    parent.appendChild(tr);
+                }
+            }
+        }
+    </script>
+
+</head>
+
+<body id="body">
+
+    <div class="container">
+        <nav class="barra">
+            <div class="navbar__left">
+                <a href="/index_admi" class="active_link" name="barra1" id="navbar_a">Inicio</a>
+                <a href="/reservaciones_admi" name="barra2" id="navbar_a">Ver reservaciones de nuestros clientes</a>
+                <a href="/servicios_admi" class="active_link" name="barra3" id="navbar_a">Editar servicios</a>
+                <a href="/" class="active_link" name="barra4s" id="navbar_a">Cerrar sesión</a>
+            </div>  
+        </nav>
+        <main>
+            <div class="main__container">
+                <div class="main__logo">
+                    <img src="/static/images/logo.png" alt="Quality Transport logo">
+                </div>
+                <br>
+                <div class="main__title">
+                    <h1>REGISTRO DE TODOS LOS SERVICIOS</h1>
+                </div>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 5px;
+            text-align: center ;
+        }
+    </style>
+
+</head>
+
+<body>
+<br>
+    <table id="myTable" style="width:100%">
+    </table>
+    <br><br>  
+    <button onclick="agregarServicio()">Agregar un servicio</button>  
+    <br><br>  
+    <button onclick="guardarCambios()">Guardar cambios</button>  
+    
+</div>
+</main>
+<script>
+
+    function agregarServicio(){
+        //se limita a 6 los servicios para que se vean ordenados en el sitio :)
+        if (serviciosG.length<=5){
+            x = serviciosG.length+1;
+            let titleInput = document.createElement("input");
+                let descInput = document.createElement("textarea");
+                let button = document.createElement("button");
+                let actions = document.createElement('td');
+                parent = document.getElementById('myTable');
+                let tr = document.createElement('tr');
+                let title = document.createElement('td');
+                let desc = document.createElement('td');
+
+                button.innerHTML = "Eliminar servicio";
+                button.setAttribute('onclick',  "eliminar(" + x + ");");
+
+                titleInput.style.width = "100%" ;
+                descInput.style.width = "100%" ;
+                titleInput.id ="input"+serviciosG.length+x;
+                descInput.id ="textarea"+serviciosG.length+x;
+
+                desc.appendChild(descInput);
+                tr.appendChild(title);
+                tr.appendChild(desc);
+                tr.appendChild(actions);
+                actions.appendChild(button);
+                title.appendChild(titleInput);
+                parent.appendChild(tr);
+                serviciosG.splice(x,1, ["Título","Descripción"]);
+                sessionStorage.setItem("servicios", JSON.stringify(serviciosG));
+                location.reload();
+        }
+        else{
+            alert("Se ha alcanzado el límite de servicios");
+        }
+    }
+
+    function guardarCambios(){
+        for(let i=0; i < serviciosG.length; i++ ){
+            title = document.getElementById("input" + i ).value;
+            desc = document.getElementById("textarea" + i).value;
+            serviciosG[i][0] = title;
+            serviciosG[i][1] = desc;
+            sessionStorage.setItem("servicios", JSON.stringify(serviciosG));
+            location.reload();
+        }
+    }
+
+    function eliminar(i){
+        serviciosG.splice(i,1);
+        sessionStorage.setItem("servicios", JSON.stringify(serviciosG));
+        location.reload();
+    };
+
+</script>
+<script src="/static/reservacion_script.js"></script>
+<script src="/static/register_script.js"></script>
+
+</body>
+
+</html>

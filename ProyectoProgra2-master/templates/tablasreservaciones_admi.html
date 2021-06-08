@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/static/style.css" />
+        <title>QUALITY TRANSPORT| Reservaciones</title>
+    </head>
+    <body id="body">
+
+        <div class="container">
+            <nav class="barra">
+                <div class="navbar__left">
+                    <a href="/index_admi" class="active_link" name="barra1" id="navbar_a">Inicio</a>
+                    <a href="/reservaciones_admi" name="barra1" id="navbar_a">Ver reservaciones de nuestros clientes</a>
+                    <a href="/servicios_admi" class="active_link" name="barra2" id="navbar_a">Editar servicios</a>
+                    <a href="/index" class="active_link" name="barra3" id="navbar_a">Cerrar sesión</a>
+                </div>   
+            </nav>  
+
+            <main>
+                <div class="main__container">
+                    <div class="main__logo">
+                        <img src="/static/images/logo.png" alt="Quality Transport logo">
+                    </div>
+                    <br>
+                    <div class="main__title">
+                        <h1>REGISTRO DE TODAS LAS RESERVACIONES</h1>
+                    </div>
+                    <style>
+                        table,
+                        th,
+                        td {
+                            border: 1px solid black;
+                            border-collapse: collapse;
+                        }
+
+                        th,
+                        td {
+                            padding: 5px;
+                            text-align: center ;
+                        }
+                    </style>
+
+                    <br>
+                    <table id="myTable" style="width:50%">
+                        <tr>
+                            <th>Usuario</th>
+                            <th>Fecha</th>
+                            <th>Servicio</th>
+                            <th>Pasajeros</th>
+                            <th>Partida</th>
+                            <th>Destino</th>
+                        </tr>
+                    </table>
+                    <br><br>
+                    <button onclick="deleteTable()">Ver tabla</button>  
+                </div>
+            </main>
+        </div>
+        <script src="/static/reservacion_script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css" />
+    <title>QUALITY TRANSPORT| Reservaciones</title>
+</head>
+
+<body id="body">
+
+    <div class="container">
+        <nav class="barra">
+            <div class="navbar__left">
+                <a href="/index_cliente" name="barra1" id="navbar_q">Inicio</a>
+                <a href="/perfilCliente" name="barra2" id="navbar_q">Ir a mi perfil</a>
+                <a href="/reservacion" name="barra3" id="navbar_a">Hacer reservacion</a>
+                <a href="/tablareservaciones" name="barra4" id="navbar_a">Ver mis reservaciones</a>
+                <a href="/index" name="barra5" id="navbar_q">Cerrar sesion</a>
+            </div>   
+        </nav>
+        <main>
+            <div class="main__container">
+                <div class="main__logo">
+                    <img src="/static/images/logo.png" alt="Quality Transport logo">
+                </div>
+                <br>
+                <div class="main__title">
+                    <h1>REGISTRO DE TODAS TUS RESERVACIONES</h1>
+                </div>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 5px;
+            text-align: center ;
+        }
+    </style>
+</head>
+
+<body>
+<br>
+    <table id="myTable" style="width:50%">
+        <tr>
+            <th>Usuario</th>
+            <th>Fecha</th>
+            <th>Servicio</th>
+            <th>Pasajeros</th>
+            <th>Partida</th>
+            <th>Destino</th>
+            <th>Eliminar</th>
+        </tr>
+    </table>
+    <br><br>
+    <button onclick="deleteTable()">Ver tabla</button>  
+    <br><br>
+    <a href="/reservacion">Regresar a reservaciones</a>
+</div>
+</main>
+<script src="/static/reservacion_script.js"></script>
+<script src="/static/register_script.js"></script>
+</body>
+</html>

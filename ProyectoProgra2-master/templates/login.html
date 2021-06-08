@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/static/form_style.css" />
+        <title>QUALITY TRANSPORT | Iniciar sesión</title>
+    </head>
+
+    <body id="body">
+
+        <div class="container">
+            <nav class="barra">
+                <div class="navbar__left">
+                    <a href="/" class="active_link" name="barra1" id="navbar_a">Inicio</a>
+                    <a href="/info" name="barra2" id="navbar_q">¿Quiénes somos?</a>
+                    <a href="/servicios" name="barra3" id="navbar_a">Servicios</a>
+                    <a href="/contact" name="barra4" id="navbar_a">Contáctanos</a>
+                    <a href="/login" name="barra5" id="navbar_a">Iniciar sesión</a>
+                    <a href="/register" name="barra6" id="navbar_a">Registrarse</a>
+                </div>   
+            </nav>
+        
+
+            <main>
+                <div class="main__container">
+                    <br>
+                    <div class="information">
+                        Inicia sesión para poder brindarte un mejor servicio, y así realizar reservas del transporte que necesitas.
+                    </div>
+
+                    <br><br>
+                    <span>Usuario</span>
+                    <input type="text" name="user" id="user" placeholder="Usuario...">
+                    <br><br>
+                    <span>Correo electrónico</span>
+                    <input type="text" name="email" id="email" placeholder="Correo...">
+                    <br><br>
+                    <span>Contraseña</span>
+                    <input type="text" name="passw" id="passw" placeholder="Contraseña...">
+                    <br><br>
+                    <button onclick="checkLogin()">Iniciar sesión</button>
+
+
+
+                </div>
+            </main>
+
+                    
+        </div>
+        <script src="/static/login_script.js"></script>
+    </body>
+
+</html>
