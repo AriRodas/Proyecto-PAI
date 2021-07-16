@@ -1,0 +1,59 @@
+
+
+
+{%extends 'adminLandingPage.html'%}
+
+{%block admin%}
+
+<style>
+    table,
+    th,
+    td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    th,
+    td {
+        padding: 5px;
+        text-align: center ;
+    }
+</style>
+
+<main>
+    <div class="main__container">
+        <div class="main__logo">
+            <img src="/static/images/logo.png" alt="Quality Transport logo">
+        </div>
+        <br>
+        <div class="main__title">
+            <h1>SERVICIOS DE QUALITY TRANSPORT</h1>
+        </div>
+        <br>
+        <table id="myTable" class="myTable" style="width:85%">
+
+            <tr>
+                <th>Titulo</th>
+                <th>Descripcion</th>
+                <th>Eliminar</th>
+            </tr>
+            {% for serv in servicios %}
+            <tr>
+                <td>{{ serv["titulo"] }}</td>
+                <td>{{ serv["descripcion"] }}</td>
+                <td>
+                    <form action="{{ url_for('serviciosAdmin') }}" method="POST">
+                        <input type="hidden" name="id" value="{{ serv['id'] }}">
+                        <input type="submit" value="Delete">
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        <br><br>
+        <a href="{{ url_for('insertService') }}">Insertar un nuevo servicio</a>
+        
+    </div>
+</main>
+
+{%endblock admin%}

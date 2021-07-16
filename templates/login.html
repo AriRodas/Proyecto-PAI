@@ -1,0 +1,27 @@
+{%extends 'landing_page.html'%}
+{%block navbar%}
+
+<main>
+    <form class="main__container" action="{{ url_for('login') }}" method="post">
+        <br>
+        <div class="information">
+        Inicia sesión para poder brindarte un mejor servicio, y así realizar reservas del transporte que necesitas.
+        </div>
+
+        <br><br>
+        <span>Usuario</span>
+        <input type="text" name="user" placeholder="Usuario...">
+        <br><br>
+        <span>Correo electrónico</span>
+        <input type="text" name="email" placeholder="Correo...">
+        <br><br>
+        <span>Contraseña</span>
+        <input type="password" name="password" placeholder="Contraseña...">
+        <br><br>
+        <button><input type="submit" value="Login"></button>
+    </form>
+        
+
+</main>
+
+{%endblock navbar%}

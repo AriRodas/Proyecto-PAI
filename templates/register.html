@@ -1,0 +1,36 @@
+{%extends 'landing_page.html'%}
+{%block navbar%}
+
+<main>
+    <form action="{{ url_for('register') }}" method="post">
+
+        <div class="main__container">
+        
+        <div class="information">
+            Regístrate y crea una cuenta para poder brindarte un mejor servicio, y así realizar reservas del transporte que necesitas.
+        </div>
+
+        <br>
+        <span>Usuario</span>
+        <input type="text" name="user" placeholder="Usuario...">
+        <br>
+        <span>Correo electrónico</span>
+        <input type="text" name="email" placeholder="Correo...">
+        <br>
+        <span>Contraseña</span>
+        <input type="password" name="password" placeholder="Contraseña...">
+        <br>
+        <span>Contraseña</span>
+        <input type="password" name="confpassword" placeholder="Contraseña...">
+        <br>
+        <div class="g-recaptcha" data-sitekey="6LeAdQcbAAAAAFhWhLVOYQz2RSawVM1brJY9j7ql"></div>
+        <br>
+        <button><input type="submit" value="Register"></button>
+    </div>
+
+    </form>
+
+    
+</main>
+
+{%endblock navbar%}

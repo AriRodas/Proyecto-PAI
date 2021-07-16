@@ -1,0 +1,56 @@
+{%extends 'adminLandingPage.html'%}
+
+{%block admin%}
+
+<style>
+    table,
+    th,
+    td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    th,
+    td {
+        padding: 5px;
+        text-align: center ;
+    }
+</style>
+
+<main>
+    <div class="main__container">
+        <div class="main__logo">
+            <img src="/static/images/logo.png" alt="Quality Transport logo">
+        </div>
+        <br>
+        <div class="main__title">
+            <h1>RESERVAS DE CLIENTES QUALITY TRANSPORT</h1>
+        </div>
+        <br>
+        <table id="myTable" class="myTable" style="width:85%">
+
+            <tr>
+                <th>Usuario</th>
+                <th>Fecha</th>
+                <th>Servicio</th>
+                <th>Pasajeros</th>
+                <th>Partida</th>
+                <th>Destino</th>
+            </tr>
+            {% for reserv in reservacion %}
+            <tr>
+                <td>{{ reserv["usuario"] }}</td>
+                <td>{{ reserv["fecha"] }}</td>
+                <td>{{ reserv["servicio"] }}</td>
+                <td>{{ reserv["pasajeros"] }}</td>
+                <td>{{ reserv["partida"] }}</td>
+                <td>{{ reserv["destino"] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <br><br>
+        
+    </div>
+</main>
+
+{%endblock admin%}

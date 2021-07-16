@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css" />
+    <title>QUALITY TRANSPORT | Servicios</title>
+
+    <script>
+        let serviciosG = JSON.parse(sessionStorage.getItem("servicios"));  
+        window.onload = function getServicios(){
+            
+            if (serviciosG.length=="0"){
+                parent = document.getElementById('servicios');
+                let div = document.createElement('div');
+                let h1 = document.createElement('h1');
+                h1.innerHTML= 'No hay servicios disponibles';
+                parent.appendChild(h1);
+            }
+            else{
+
+                for(let i = 0; i<serviciosG.length; i++){
+                    let x = i+1;
+                    parent = document.getElementById('servicios');
+                    let div = document.createElement('div');
+                    div.className = "sc" + x;
+                    let h1 = document.createElement('h1');
+                    h1.innerHTML= serviciosG[i][0];
+                    let p = document.createElement('p');
+                    p.innerHTML= serviciosG[i][1];
+                    
+                    div.appendChild(h1);
+                    div.appendChild(p);
+                    parent.appendChild(div);
+                }
+            }
+        }
+    </script>
+</head>
+
+<body id="body">
+
+    <div class="container">
+        <nav class="barra">
+            <div class="navbar__left">
+                <a href="/" class="active_link" name="barra1" id="navbar_a">Inicio</a>
+                <a href="/info" name="barra2" id="navbar_q">¿Quiénes somos?</a>
+                <a href="/servicios" name="barra3" id="navbar_a">Servicios</a>
+                <a href="/contact" name="barra4" id="navbar_a">Contáctanos</a>
+                <a href="/login" name="barra5" id="navbar_a">Iniciar sesión</a>
+                <a href="/register" name="barra6" id="navbar_a">Registrarse</a>
+            </div>   
+        </nav>
+    
+
+        <main>
+            <div class="main__container">
+                <div class="main__logo">
+                    <img src="/static/images/logo.png" alt="Quality Transport logo">
+                </div>
+                <br>
+                <div class="main__title">
+                    <h1>SERVICIOS</h1>
+                </div>
+                <br>
+                <div class="information">
+                    Somos una empresa de transporte turístico y empresarial. Enfocada en brindar soluciones ajustadas a las necesidades de cada cliente. Comprometidos con la excelencia de nuestros servicios y empeñados en una mejora continua para garantizar la satisfacción y preferencia de nuestros clientes.
+                    Desde el año 2011 en el rubro de transporte y  adaptándonos a las exigencias de un mercado dinámico, cambiante y creciente, hemos permanecido y atendido a diferentes tipos de clientes, centrándonos siempre en el establecimiento de relaciones comerciales de largo plazo, aportando valor y en donde podamos ganar ambas partes.
+                    Nos encanta trabajar con diferentes públicos, disfrutamos lo que hacemos y marcamos la diferencia en nuestros servicios.
+                </div>
+
+                <div class="cuadros">
+                    <div class="servicios">
+                        <div class="servicios_title">
+                            <div>
+                                <h1>Servicios</h1>
+                                <br>
+                                <a href="/templates/login.html"  class="linklogin"><h2>Inicia sesion para reservar ahora</h2></a>
+                            </div>
+                        </div>
+                        <div class="servicios_cuadros" id="servicios">
+                        </div>
+                    </div>
+
+                    <div class="charts__right">
+                        <div class="charts__right__title">
+                            <div>
+                                <h1>Somos tu aliado</h1>
+                                <br>
+                                <h2>¿Por qué establecer relaciones comerciales con QT?</h2>
+                            </div>
+                        </div>
+
+                        <div class="charts__right__cards">
+                            <div class="sc1">
+                                <h1>Garantizamos tu satisfacción</h1>
+                                <p>Conductores capacitados para manejar a la defensiva, carnetizados por el VMT,  que te tratan con respeto, amabilidad, y con conocimiento del territorio nacional y centroamericano.</p>
+                            </div>
+
+                            <div class="sc2">
+                                <h1>¡Ahorras dinero!</h1>
+                                <p>Nos ajustamos a tus necesidades, manejamos precios competitivos y establecemos acuerdos comerciales bajo la premisa ganar-ganar.</p>
+                            </div>
+
+                            <div class="sc3">
+                                <h1>Ahorras tiempo</h1>
+                                <p>Aprovecha tu tiempo en otras actividades prioritarias de tu empresa y deja el transporte en nuestras manos, tenemos un protocolo de monitoreo de nuestras unidades en cada uno de nuestros servicios, lo que garantiza la puntualidad y el desarrollo de tu evento con éxito.</p>
+                            </div>
+
+                            <div class="sc4">
+                                <h1>Tienes el control</h1>
+                                <p>En nuestras unidades puedes elegir la música que deseas escuchar, así como el video que prefieras.  Contamos con un repertorio de música y video para que tú puedas disfrutar tu estancia en nuestras unidades.</p>
+                            </div>
+
+                            <div class="sc5">
+                                <h1>Disfrutas el traslado</h1>
+                               <p>Nos esmeramos por tener unidades en excelente estado, limpias, aromatizadas, cómodas, con A/C y mucho más…</p>
+                            </div>
+
+                            <div class="sc6">
+                                <h1>¡No más estrés!</h1>
+                                <P>Permite que seamos tus aliados y comprueba cada uno de estos beneficios disponibles para ti.</P>
+                            </div>
+
+                            
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+        
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+
+</html>

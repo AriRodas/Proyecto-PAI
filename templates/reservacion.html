@@ -1,0 +1,62 @@
+
+{%extends 'clientLandingPage.html'%}
+
+{%block client%}
+
+<main>
+    <div class="main__container">
+        <div class="main__logo">
+            <img src="/static/images/logo.png" alt="Quality Transport logo">
+        </div>
+        <br>
+        <div class="main__title">
+            <h1>RESERVAS CON QUALITY TRANSPORT</h1>
+        </div>
+
+
+        <form class="texto" action="{{ url_for('reservacion') }}" method="POST">
+            <label for="fecha">Fecha del viaje:</label>
+            <input type="date" id="fecha" name="fecha">
+            <br><br>
+
+            <label for="servicios">Seleccione el tipo de servicio:</label>
+
+            <select name = "servicioss" >
+            {%for serv in servicios%}
+                <option id="servicios" value="{{ serv['titulo'] }}">{{ serv["titulo"] }}</option>
+            {%endfor%}
+            </select>
+
+            <br><br>
+
+            <label for="Pasajeros">Seleccione el numero de pasajeros:</label>
+
+            <select name="pasajeros" id="pasajeros">
+            <option value="1-4">1-4</option>
+            <option value="5-9">5-9</option>
+            <option value="10-14">10-14</option>
+            <option value="15-20">15-28</option>
+            <option value="15-20">Más de 100 personas</option>
+            </select>
+            <br><br>
+            <div>
+                <label for="partida">Lugar de partida:</label>
+                <input type="text" id="partida" name="partida" placeholder="partida">
+                <br><br>    
+        </div>
+            <div>
+                <label for="destino">Lugar de destino:</label>
+                <input type="text" id="destino" name="destino" placeholder="destino">
+                <br><br>    
+            </div>
+            <input type="submit" >
+        </form>
+            
+            <br><br>
+            <a href="{{ url_for('tablareservaciones') }}">Ver tabla de reservaciones</a>
+            
+    </div>
+    </div>
+</main>
+
+{%endblock client%}

@@ -1,0 +1,26 @@
+{%extends 'adminLandingPage.html'%}
+
+{%block admin%}
+
+<main>
+    <div class="main__container">
+        <div class="main__logo">
+            <img src="/static/images/logo.png" alt="Quality Transport logo">
+        </div>
+        <br>
+        <div class="main__title">
+            <h1>INSERTAR UN NUEVO SERVICIO</h1>
+        </div>
+        <br>
+        <form action="{{ url_for('insertService') }}" method="POST">
+            <label for="titulo">Titulo:</label>
+            <input type="text" id="titulo" name="titulo"><br><br>
+            <label for="descripcion">Descripcion:</label>
+            <input type="text" id="descripcion" name="descripcion"><br><br>
+            <input type="submit" value="Insertar">
+        </form>
+        
+    </div>
+</main>
+
+{%endblock admin%}
