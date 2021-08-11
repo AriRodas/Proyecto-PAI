@@ -1,0 +1,52 @@
+
+{%extends 'clientLandingPage.html'%}
+
+{%block client%}
+
+<style>
+    
+
+    div.relative {
+        position: relative;
+        bottom: -20px;
+        right: -400px;
+    }
+</style>
+
+<main>
+    <div class="main__container">
+        <div class="main__logo">
+            <img src="/static/images/logo.png" alt="Quality Transport logo">
+        </div>
+        <br>
+        <div class="main__title">
+            <h1>PAQUETES TURISTICOS</h1>
+        </div>
+
+        <div class="relative">
+            <form action="{{ url_for('checkout') }}" method="POST">
+                <h3>total: {{total}}</h3><br>
+                <label for="name">Namsssssssse:</label>
+                <input type="text" id="name" name="name"><br><br>
+                <label for="creditCard">Credit card:</label>
+                <input type="text" id="creditCard" name="creditCard"><br><br>
+                <label for="date">Date:</label>
+                <input type="text" id="date" name="date" placeholder="12/23"><br><br>
+                <label for="code">Code:</label>
+                <input type="text" id="code" name="code" ><br><br>
+                <input type="hidden" name="total" value="{{total}}">
+                <br>
+            
+                <div>
+                    <input type="submit" class="btn primary raised"value="Checkout">
+                </div>
+                <br><br>
+            </form>
+        </div>
+
+
+
+    </div>
+</main>
+
+{%endblock client%}
