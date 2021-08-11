@@ -8,16 +8,18 @@
 body{
     box-sizing: border-box;
     font-family: "Lexend", sans-serif;
-    background-color: #000000;
 }
 
 
 .information{
-    color: white;
-    text-align: center;
+    color: black;
+    text-align: justify;
     font-size: larger;
 }
 
+.information > h1{
+  color:RGBA(0,0,0,0.8);
+}
 .texto{
     color: white;
     font-size: larger;
@@ -42,14 +44,14 @@ body{
     display: grid;
     height: 100vh;
     width: 100%;
-    grid-template-rows: 0.2fr 3fr;
+    grid-template-rows: 0fr;
     grid-template-areas:
-      "sidebar nav nav nav"
-      "sidebar main main main";
+      "nav nav nav"
+      "main main main";
   }
   
   .barra {
-    background: #aa0000;
+    background: RGBA(0,0,0,0.8);
     grid-area: nav;
     width: 100%;
     height: 55px;
@@ -59,27 +61,25 @@ body{
     padding: 0 30px 0 30px;
   }
 
-
-
-  
   .navbar__left > a {
     margin-left: 100px;
     text-decoration: none;
-    color: #ffffff;
+    color: #f5f5f7;
     font-size: 20px;
-    font-weight: bold;
     width: 100%;
   }
-  
 
-
+  .navbar__left > a:hover{
+    color:white;
+    font-weight: bold;
+  }
 
   main {
-    background: #717280ce;
+    background: white;
     grid-area: main;
     overflow-y: auto;
   }
-  
+
   .main__container {
     padding: 20px 35px;
   }
@@ -96,7 +96,7 @@ body{
     align-items: center;
     justify-content: center;
     font-size: larger;
-    color:#020270;
+    color:RGBA(0,0,0,0.8);
   }
   
   .main__title > img {
@@ -131,7 +131,7 @@ body{
     height: 90px;
     padding: 25px;
     border-radius: 5px;
-    background: #ffffff;
+    background: #fbfbfd!important;
   }
   
   .card_inner {
@@ -154,7 +154,7 @@ body{
   .servicios {
     padding: 20px;
     border-radius: 5px;
-    background: #ffffff;
+    background: #D9D2C3!important;
   }
   
   .servicios_title {
@@ -165,7 +165,7 @@ body{
   
   .servicios_title > div > h1 {
     font-size: 30px;
-    color: #000000;
+    color: RGBA(0,0,0,0.8);
     margin-bottom: 5px;
   }
   
@@ -196,7 +196,7 @@ body{
 
 
   .sc1 {
-    background: #aa0000;
+    background: #29295E;
     color: #ffffff;
     text-align: center;
     padding: 20px;
@@ -206,7 +206,7 @@ body{
   }
   
   .sc2 {
-    background: #0f0ca1;;
+    background: #29295E;
     color: #ffffff;
     text-align: center;
     padding: 20px;
@@ -216,7 +216,7 @@ body{
   }
   
   .sc3 {
-    background: #0f0ca1;
+    background: #29295E;
     color: #ffffff;
     text-align: center;
     padding: 20px;
@@ -226,7 +226,7 @@ body{
   }
   
   .sc4 {
-    background: #aa0000;
+    background: #29295E;
     color: #ffffff;
     text-align: center;
     padding: 20px;
@@ -236,7 +236,7 @@ body{
   }
 
   .sc5 {
-    background: #aa0000;
+    background: #29295E;
     color: #ffffff;
     text-align: center;
     padding: 20px;
@@ -246,7 +246,7 @@ body{
   }
   
   .sc6 {
-    background: #0f0ca1;
+    background: #29295E;
     color: #ffffff;
     text-align: center;
     padding: 20px;
@@ -270,14 +270,14 @@ body{
   
   .charts__right__title > div > h1 {
     font-size: 30px;
-    color: #0f0f0f;
+    color: RGBA(0,0,0,0.8);
     margin-bottom: 5px;
   }
   
   .charts__right__title > div > p {
     font-size: 14px;
     font-weight: 700;
-    color: #000102;
+    color: RGBA(0,0,0,0.8);
   }
   
   select{
@@ -287,12 +287,6 @@ body{
   }
   
   input{
-    color: rgb(0, 0, 0);
-    font-size: medium;
-    font-family: "Lexend", sans-serif;
-  }
-
-  button{
     color: rgb(0, 0, 0);
     font-size: medium;
     font-family: "Lexend", sans-serif;
@@ -312,12 +306,52 @@ body{
   }
 
 .linklogin{
-    font-size: medium;
+    font-size: larger;
     font-family: "Lexend", sans-serif;
     color: black;
+    text-decoration: none;
   }
+
+.linklogin:hover{
+    color:#29295E;
+    font-weight: bold;
+}
 
   li{
     text-align: left;
   }
 
+.card-title{
+  color:RGBA(0,0,0,0.8);
+}
+
+::placeholder{
+  color:white;
+}
+
+button{
+  font-size:20px;
+  background:#29295E!important
+}
+
+.video{
+  display: flex;
+  aling-items: center;
+  justify-content: center;
+}
+
+.caqui-bg{
+  background:#D9D2C3!important
+}
+
+.myTable{
+  background:#D9D2C3;
+}
+.btn-blue{
+  background:#29295E;
+  color:white;
+}
+.btn-blue:hover{
+  background-color:white;
+  color:#29295E;
+}

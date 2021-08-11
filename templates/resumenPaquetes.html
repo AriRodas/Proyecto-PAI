@@ -1,0 +1,67 @@
+
+{%extends 'clientLandingPage.html'%}
+
+{%block client%}
+
+<style>
+    
+
+    div.relative {
+        position: relative;
+        bottom: -20px;
+        right: -400px;
+    }
+
+    .button {
+        background-color: #4CAF50;
+    }
+</style>
+
+<main>
+    <div class="main__container">
+        <br>
+        <div class="main__title">
+            <h1>CHECKOUT</h1>
+        </div>
+        {%if pago %}
+            <h1>Total: {{pago}} </h1>
+            <p> Precio por la asesoria y resercavion de paquete turistico * No incluye el cobro por servicios individuales</p>
+            <p> Nos pondremos en contacto con usted para brindarle el costo por el servicio de transporte segun sus requerimientos</p>
+        {%endif%}
+        <br><br><br>
+        {%if hotel %}
+            <h1>Hotel: </h1>
+            <p>{{hotel}}</p>
+        {%endif%}
+
+        <br>
+
+        {%if lugar%}
+            <h1>Lugar Tursitico:</h1>
+            <p>{{lugar}}</p>
+        {%endif%}
+
+        <br>
+
+        {%if guia%}
+            <h1>Guia de turista:</h1>
+            <p>{{guia}}</p>
+        {%endif%}
+        <br>
+        <a href="/opcionesHotel">Modificar mi orden</a>
+        <br><br>
+
+        <form action="{{ url_for('checkout') }}" method='POST' >
+
+            
+            <input type="hidden" name="pago" value="{{ pago }}">
+
+            <br><br>
+            <input type="submit" value="Checkout">
+
+        </form>
+
+    </div>
+</main>
+
+{%endblock client%}

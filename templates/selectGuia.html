@@ -1,0 +1,65 @@
+
+{%extends 'clientLandingPage.html'%}
+
+{%block client%}
+
+<style>
+    
+
+    div.relative {
+        position: relative;
+        bottom: -20px;
+        right: -400px;
+    }
+</style>
+
+<main>
+    <div class="main__container">
+        <div class="main__logo">
+            <img src="/static/images/logo.png" alt="Quality Transport logo">
+        </div>
+        <br>
+        <div class="main__title">
+            <h1>PAQUETES TURISTICOS</h1>
+        </div>
+
+        <div class="relative">
+            <form action="{{ url_for('selectGuia') }}" method='POST' >
+
+               
+            
+                    <h2>Seleccione el lugar:<h2>
+                        <select name="guia" id="guia">
+                        <option value="El Salvador Turismo">El Salvador Turismo</option>
+                        <option value="El Salvador Xpedition">El Salvador Xpedition</option>
+                        <option value="Dolphins Tours">Dolphins Tours</option>
+                        <option value="Eco Tours Petate">Eco Tours Petate</option>
+                        <option value="Eco Mayan Tours DMC">Eco Mayan Tours DMC</option>
+                        <option value="MORAZAN TOURS">MORAZAN TOURS</option>
+                        <option value="GREEN BLUE RED">GREEN BLUE RED</option>
+                        <option value="INTER TOURS">INTER TOURS</option>
+                        <option value="NAHUAT TOURS">NAHUAT TOURS</option>
+                        <option value="NETWORK TOURS">NETWORK TOURS</option>
+                    </select>
+                    
+                {%if hotel%}
+                    <input type="hidden" name="hotel" value="{{hotel}}">
+                {%endif%}
+
+                {%if lugar%}
+                    <input type="hidden" name="lugar" value="{{lugar}}">
+                {%endif%}
+
+                
+                <br><br>
+                <input type="submit">
+
+          </form>
+        </div>
+
+
+
+    </div>
+</main>
+
+{%endblock client%}

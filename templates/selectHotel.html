@@ -1,0 +1,59 @@
+
+{%extends 'clientLandingPage.html'%}
+
+{%block client%}
+
+<style>
+    
+
+    div.relative {
+        position: relative;
+        bottom: -20px;
+        right: -400px;
+    }
+</style>
+
+<main>
+    <div class="main__container">
+        <div class="main__logo">
+            <img src="/static/images/logo.png" alt="Quality Transport logo">
+        </div>
+        <br>
+        <div class="main__title">
+            <h1>PAQUETES TURISTICOS</h1>
+        </div>
+
+        <div class="relative">
+            <form action="{{ url_for('selectHotel') }}" method='POST' >
+
+               
+                        <h2>Seleccione el lugar</h2>
+                        <select name="lugar" id="lugar">
+                        <option value="San Salvador">San Salvador</option>
+                        <option value="Concepcion de Ataco">Concepcion de Ataco</option>
+                        <option value="San Miguel">San Miguel</option>
+                        <option value="Apaneca">Apaneca</option>
+                        <option value="Santa Ana">Santa Ana</option>
+                        <option value="Lago de Coatepeque">Lago de Coatepeque</option>
+                        <option value="Costa del Sol">Costa del Sol</option>
+                        <option value="San Luis">San Luis</option>
+                        <option value="Suchitoto">Suchitoto</option>
+                        <option value="Playa Las Tunas">Playa Las Tunas</option>
+                        <option value="San Ignacio">San Ignacio</option>
+                    </select>
+                    <input type="hidden" name="userName" value= {{ Hospedaje }}>
+               
+
+                
+                <br><br>
+                <input type="submit">
+
+          </form>
+        </div>
+
+
+
+    </div>
+</main>
+
+{%endblock client%}

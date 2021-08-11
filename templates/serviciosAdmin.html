@@ -35,7 +35,7 @@
             <tr>
                 <th>Titulo</th>
                 <th>Descripcion</th>
-                <th>Eliminar</th>
+                <th>Acciones</th>
             </tr>
             {% for serv in servicios %}
             <tr>
@@ -44,14 +44,14 @@
                 <td>
                     <form action="{{ url_for('serviciosAdmin') }}" method="POST">
                         <input type="hidden" name="id" value="{{ serv['id'] }}">
-                        <input type="submit" value="Delete">
+                        <input type="submit" value="Eliminar">
                     </form>
                 </td>
             </tr>
             {% endfor %}
         </table>
         <br><br>
-        <a href="{{ url_for('insertService') }}">Insertar un nuevo servicio</a>
+        <a style="color:black" href="{{ url_for('insertService') }}">Insertar un nuevo servicio</a>
         
     </div>
 </main>

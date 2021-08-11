@@ -1,7 +1,30 @@
 {%extends 'landing_page.html'%}
-
 {%block navbar%}
+<script>
+    var serviciosG = JSON.parse(sessionStorage.getItem("servicios"));
+    window.onload = function getServicios(){
 
+        if (serviciosG.length=="0"){
+            parent = document.getElementById('servicios');
+            let div = document.createElement('div');
+            let h1 = document.createElement('h1');
+            h1.innerHTML= 'No hay servicios disponibles';
+            parent.appendChild(h1);
+        }
+        else{
+            for(let i = 0; i<serviciosG.length; i++){
+                let x = i+1;
+                parent = document.getElementById('servicios');
+                let div = document.createElement('div');
+                div.className = "sc" + x;
+                let h1 = document.createElement('h1');
+                h1.innerHTML= serviciosG[i][0];
+                div.appendChild(h1);
+                parent.appendChild(div);
+            }
+        }
+    }
+</script>
 <main>
     <div class="main__container">
         <div class="main__logo">
@@ -27,12 +50,11 @@
                 <div class="servicios_cuadros" id="servicios">
                 </div>
             </div>
-            <div class="charts__right">
+            <div class="charts__right servicios">
                 <div class="charts_right_title">
                     <div>
-                        <h1>¿Adónde viajar?</h1>
+                        <h1 class="card-title">¿Adónde viajar?</h1>
                         <br>
-                        <h2>Conoce El Salvador</h2>
                     </div>
                 </div>
                 <div class="charts_right_cards">
@@ -44,5 +66,4 @@
         </div>
     </div>
 </main>
-
 {%endblock navbar%}

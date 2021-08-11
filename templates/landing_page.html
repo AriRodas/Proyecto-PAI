@@ -9,33 +9,6 @@
     <title>QUALITY TRANSPORT</title>
     <script src="/static/servicios.js"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script> 
-        var serviciosG = JSON.parse(sessionStorage.getItem("servicios")); 
-        window.onload = function getServicios(){
-            
-            if (serviciosG.length=="0"){
-                parent = document.getElementById('servicios');
-                let div = document.createElement('div');
-                let h1 = document.createElement('h1');
-                h1.innerHTML= 'No hay servicios disponibles';
-                parent.appendChild(h1);
-            }
-            else{
-
-                for(let i = 0; i<serviciosG.length; i++){
-                    let x = i+1;
-                    parent = document.getElementById('servicios');
-                    let div = document.createElement('div');
-                    div.className = "sc" + x;
-                    let h1 = document.createElement('h1');
-                    h1.innerHTML= serviciosG[i][0];
-                    
-                    div.appendChild(h1);
-                    parent.appendChild(div);
-                }
-            }
-        }
-    </script>
 </head>
 
 <body id="body">
@@ -51,7 +24,6 @@
             </div>
         </nav>
         {%block navbar%}
-
         {%endblock navbar%}
     </div>
     <script src="/static/preload_script.js"></script>

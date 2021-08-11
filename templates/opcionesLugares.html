@@ -1,0 +1,48 @@
+
+{%extends 'clientLandingPage.html'%}
+
+{%block client%}
+
+<style>
+    
+
+    div.relative {
+        position: relative;
+        bottom: -20px;
+        right: -400px;
+    }
+</style>
+
+<main>
+    <div class="main__container">
+        <div class="main__logo">
+            <img src="/static/images/logo.png" alt="Quality Transport logo">
+        </div>
+        <br>
+        <div class="main__title">
+            <h1>PAQUETES TURISTICOS</h1>
+        </div>
+
+        <div class="relative">
+            <form action="{{ url_for('opcionesLugares') }}" method='POST' >
+
+                 <h2>Desea reservar un lugar turistico:</h2>
+                <select id="cars" name="option">
+                    <option value="Si">Si</option>
+                    <option value="No">No</option>
+                </select>
+
+                <input type="hidden" name="hotel" value="{{ hotel }}">
+
+                <br><br>
+                <input type="submit">
+
+          </form>
+        </div>
+
+
+
+    </div>
+</main>
+
+{%endblock client%}

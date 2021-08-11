@@ -77,10 +77,10 @@ class DashboardRoutes:
                     fecha = request.form["fecha"]
                     servicio = request.form["servicioss"]
                     pasajeros = request.form["pasajeros"]
-                    pasajeros = str(pasajeros)
+                    pasajeros = int(pasajeros)
                     partida = request.form["partida"]
                     destino = request.form["destino"]
-                    logic.insertReservation(usuario, fecha, servicio, fecha, partida, destino)
+                    logic.insertReservation(usuario, fecha, servicio, pasajeros, partida, destino)
                     getAllReservations = logic.getAllReservations()
                     return render_template("tablareservaciones.html", reservacion = getAllReservations, usuario = usuario)
 
@@ -95,6 +95,7 @@ class DashboardRoutes:
         @app.route("/servicios")
         def servicios():
                 return render_template("servicios.html")
+
 
         @app.route("/info")
         def info():

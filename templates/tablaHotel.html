@@ -1,0 +1,57 @@
+
+{%extends 'clientLandingPage.html'%}
+
+{%block client%}
+
+<style>
+    table,
+    th,
+    td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    th,
+    td {
+        padding: 5px;
+        text-align: center ;
+    }
+</style>
+
+<main>
+    <div class="main__container">
+        <div class="main__logo">
+            <img src="/static/images/logo.png" alt="Quality Transport logo">
+        </div>
+        <br>
+        <br>
+        <table id="myTable" class="myTable" style="width:85%">
+
+            <tr>
+                <th>Nombre</th>
+                <th>Ubicacion</th>
+                <th>Telefono</th>
+                <th>Pagina web</th>
+                <th>Seleccionar</th>
+            </tr>
+            {% for paquete in dataJson %}
+            <tr>
+                <td>{{ paquete["nombre"] }}</td>
+                <td>{{ paquete["ubicacion"] }}</td>
+                <td>{{ paquete["telefono"] }}</td>
+                <td>{{ paquete["pag_web"] }}</td>
+                <td>
+                    <form action="{{ url_for('tablaHotel') }}" method="POST">
+                        <input type="hidden" name="hotel" value="{{ paquete['nombre'] }}">
+                        <input type="submit" value="Select">
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        
+        
+    </div>
+</main>
+
+{%endblock client%}
